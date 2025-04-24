@@ -1,10 +1,8 @@
-# Movimentação em Cena 2D
+# Top Down - Movimentação em Cena 2D 
 ### Obs: Para entender a lógica por trás do código, o trecho "if left_right: ..." obtém valores positivos, ficando à direita em um plano cartesiano. Para podermos ir para a esquerda, utilizamos "else: ... * -SPEED"
 ```
 extends CharacterBody2D;
-
 const SPEED = 300;
-const JUMP_VELOCITY = -400
 
 func _physics_process(_delta):
 	var left_right = Input.get_axis('ui_left', 'ui_right');
