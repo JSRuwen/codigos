@@ -1,13 +1,10 @@
 # Movimentação em Cena 2D
-### Obs: Para entender a lógica por trás do código, o trecho "if left_right: ..." obtém valores positivos, ficando à direita em um plano cartesiano. Para podermos ir para a esquerda, utilizamos "else: velocity.x = left_right * -SPEED"
+### Obs: Para entender a lógica por trás do código, o trecho "if left_right: ..." obtém valores positivos, ficando à direita em um plano cartesiano. Para podermos ir para a esquerda, utilizamos "else: ... * -SPEED"
 ```
 extends CharacterBody2D;
 
 const SPEED = 300;
 const JUMP_VELOCITY = -400
-
-func _ready():
-	anim.play("walk_right")
 
 func _physics_process(_delta):
 	var left_right = Input.get_axis('ui_left', 'ui_right');
@@ -19,7 +16,7 @@ func _physics_process(_delta):
 	if top_down:
 		velocity.y = top_down * SPEED;
 	else:
-		velocity.y = top_down * -SPEED
+		velocity.y = top_down * -SPEED;
 	move_and_slide()
 ```
 
